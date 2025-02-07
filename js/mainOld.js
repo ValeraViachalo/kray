@@ -283,22 +283,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalFrames = 190;
     let currentFrame = 0;
-    let images = {};
-    let missingFrames = new Set();
+    let images = new Array(totalFrames);
 
-    function preloadFrame(index) {
-      if (index >= totalFrames || index < 0 || missingFrames.has(index)) return;
-      if (!images[index]) {
+    function preloadImages() {
+      for (let i = 0; i < totalFrames; i++) {
         const img = new Image();
-        img.src = `${spriteFolder}${index + 1}.webp`;
+        img.src = `${spriteFolder}${i + 1}.webp`;
 
         img.onload = () => {
-          images[index] = img;
-          if (index === currentFrame) drawFrame();
+          images[i] = img;
+          if (i === currentFrame) drawFrame();
         };
 
         img.onerror = () => {
-          missingFrames.add(index);
+          console.error(`Failed to load image: ${spriteFolder}${i + 1}.webp`);
         };
       }
     }
@@ -322,15 +320,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true,
       onUpdate: (self) => {
         let frame = Math.round(self.progress * (totalFrames - 1));
-        while (missingFrames.has(frame) && frame < totalFrames - 1) {
-          frame++;
-        }
-
         if (frame !== currentFrame) {
           currentFrame = frame;
-          preloadFrame(frame);
-          preloadFrame(frame + 1);
-          preloadFrame(frame + 2);
           drawFrame();
         }
 
@@ -403,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
           offsetY = offset_y_end;
         }
 
-        //offsetY = self.progress < 0.07 ? gsap.utils.mapRange(0, 0.1, offset_y_start,offset_y_end, self.progress) : 0;
         gsap.to(box.parentElement, {
           x: offsetX,
           y: offsetY,
@@ -413,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    preloadFrame(0);
+    preloadImages();
   }
 });
 
