@@ -1,0 +1,562 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="indicator"></div>
+
+    <div class="header_box">
+      <div class="header">
+        <a href="/" class="logo">
+          <img src="img/Logo.svg" alt="" />
+        </a>
+        <nav class="main_nav">
+          <ul>
+            <li><a href="#" class="smoth_scroll">Головна</a></li>
+            <li><a href="#cvirkun" class="smoth_scroll">Цвіркун</a></li>
+            <li>
+              <a href="#zastosuvania" class="smoth_scroll">Застосування</a>
+            </li>
+            <li><a href="#video" class="smoth_scroll">Відео</a></li>
+            <li><a href="#yakist" class="smoth_scroll">Контроль якості</a></li>
+            <li><a href="#faq" class="smoth_scroll">FAQ</a></li>
+            <li><a href="#contaktu" class="smoth_scroll">Контакти</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="button-primary">Дізнатись більше</a>
+
+        <button type="button" class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="anim_container">
+      <div class="back_image sprite sprite-container" data-speed="auto">
+        <div class="back_image_inner">
+          <canvas id="animationCanvas"></canvas>
+        </div>
+      </div>
+      <section class="section_block section_1 scroll_section">
+        <div class="container">
+          <div class="right">
+            <h1>
+              Kray - edge on the battlefield
+              <div id="typed-strings">
+                <b>Ефективність</b>
+                <b>Надійність</b>
+                <b>Безпека</b>
+              </div>
+              <br />
+              <span>[<span id="typed"></span>]</span>
+            </h1>
+            <p class="subtitle">
+              Український виробник плат ініціації для дистанційного мінування
+              <a href="#cvirkun" class="button_down smoth_scroll"></a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        class="section_block section_2 scroll_section scroll_container"
+        id="cvirkun"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="left">
+              <h2>«Цвіркун»</h2>
+              <div class="scroll_text_container">
+                <p class="scroll_text scroll_text_first">
+                  Спеціалізована плата ініціації, призначена для дистанційного
+                  мінування за допомогою БПЛА. Завдяки поєднанню магнітометра,
+                  акселерометра та функції самознищення, забезпечує точність,
+                  надійність і безпеку в створенні мінно-вибухових загороджень.
+                </p>
+              </div>
+            </div>
+            <!--  <img src="img/0030 1.png" class="bg_img" />-->
+          </div>
+        </div>
+      </div>
+      <div class="section_block section_3 scroll_section scroll_container">
+        <div class="container">
+          <div class="row">
+            <div class="left">
+              <div class="scroll_text_container">
+                <p class="scroll_text">
+                  Інтелектуальне виявлення: реагує на спотворення магнітного
+                  поля.
+                </p>
+              </div>
+            </div>
+            <!--  <img src="img/bg_sec_3.png" class="bg_img" />-->
+          </div>
+        </div>
+      </div>
+      <div class="section_block section_4 scroll_section scroll_container">
+        <div class="container">
+          <div class="row">
+            <div class="left">
+              <div class="scroll_text_container">
+                <p class="scroll_text">
+                  Універсальність: компактна конструкція дозволяє інтегрувати
+                  модуль із різними штатними та саморобними вибуховими
+                  пристроями.
+                </p>
+              </div>
+            </div>
+            <!-- <img src="img/bg_sec_4.png" class="bg_img" />-->
+          </div>
+        </div>
+      </div>
+      <div class="section_block section_5 scroll_section scroll_container">
+        <div class="container">
+          <div class="row">
+            <div class="left">
+              <div class="scroll_text_container"></div>
+              <p class="scroll_text">
+                Автономність: працює від вбудованого джерела живлення, із
+                заданим терміном роботи, після якого автоматично самознищується.
+              </p>
+            </div>
+          </div>
+          <!--  <img src="img/bg_sec_5.png" class="bg_img" />-->
+        </div>
+      </div>
+      <div class="section_block section_6 stop-block scroll_section"></div>
+    </div>
+
+    <div class="section_block section_66">
+      <div class="container">
+        <div class="button-primary transparent">Звʼязатися з нами</div>
+      </div>
+    </div>
+
+    <div class="section_block section_7">
+      <div class="container">
+        <div class="sposobi">
+          <div class="item_tablet">
+            <span class="block_title">Тактичне <br />застосування</span>
+            <a href="#" class="button-primary transparent">Звʼязатися з нами</a>
+          </div>
+          <div class="item">
+            <span>Спосіб (01) </span>
+            <h4>Дистанційне мінування</h4>
+            <p>
+              Дозволяє проводити мінування у важкодоступних або контрольованих
+              ворогом зонах без залучення особового складу. Пристрій скидається
+              з БПЛА та активується через вказаний час, мінімізуючи ризики для
+              військових.
+            </p>
+          </div>
+          <div class="item">
+            <span>Спосіб (02) </span>
+            <h4>Протидія розмінуванню</h4>
+            <p>
+              "Цвіркун" встановлюється під основною міною, гарантуючи детонацію
+              обох зарядів у разі спроби її вилучення. Ефективний проти саперів
+              у бойових умовах, роблячи розмінування неможливим.
+            </p>
+          </div>
+          <div class="item">
+            <span>Спосіб (03) </span>
+            <h4>Засідка</h4>
+            <p>
+              Дозволяє проводити засідки виключно мінно-вибуховими засобами,
+              знищуючи живу силу і техніку противника без участі оператора.
+              Варіанти використання - мінування маршрутів, ураження дрібних
+              груп, зрив операцій
+            </p>
+          </div>
+          <div class="item_phone">
+            <a href="#" class="button-primary transparent">Звʼязатися з нами</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="headline" id="zastosuvania">
+      <div class="container row">
+        <h2 class="block_title">Тактичне <br />застосування</h2>
+        <a href="#" class="button-primary transparent">Звʼязатися з нами</a>
+      </div>
+    </div>
+    <div class="section_block section_8" id="video">
+      <div class="container">
+        <div class="video-block">
+          <div class="video-area">
+            <video class="video" muted>
+              <source src="img/video.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="play-icon"></div>
+        </div>
+      </div>
+    </div>
+    <div class="headline video_title_row">
+      <div class="container row">
+        <h2 class="block_title">
+          Відео використання <br />
+          виробів
+        </h2>
+        <div class="btn-area">
+          <div class="prev"></div>
+          <div class="next"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section_block section_9">
+      <div class="container">
+        <div class="slider">
+          <div class="slider-track">
+            <div class="slide">
+              <video class="video" muted loop>
+                <source src="img/video_2.mp4" type="video/mp4" />
+              </video>
+              <div class="play-icon"></div>
+            </div>
+            <div class="slide">
+              <video class="video" muted loop>
+                <source src="img/video_2.mp4" type="video/mp4" />
+              </video>
+              <div class="play-icon"></div>
+            </div>
+            <div class="slide">
+              <video class="video" muted loop>
+                <source src="img/video_2.mp4" type="video/mp4" />
+              </video>
+              <div class="play-icon"></div>
+            </div>
+            <div class="slide">
+              <video class="video" muted loop>
+                <source src="img/video_2.mp4" type="video/mp4" />
+              </video>
+              <div class="play-icon"></div>
+            </div>
+            <div class="slide">
+              <video class="video" muted loop>
+                <source src="img/video_2.mp4" type="video/mp4" />
+              </video>
+              <div class="play-icon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section_block section_10">
+      <div class="container">
+        <div class="row">
+          <div class="right">
+            <h2 class="block_title">Модифікації</h2>
+            <div class="item">
+              <p class="left"><span>01</span>"Цвіркун" АМ1</p>
+
+              <p class="right">
+                Модифікація що обладнана акселерометром та магнітним датчиком на
+                одній платі. <br /><br />Комбінація робить виріб ефективним
+                рішенням при застосуванні проти колісної та гусинечної техніки
+                противника.
+              </p>
+            </div>
+            <div class="item">
+              <p class="left"><span>02</span>"Цвіркун" А</p>
+
+              <p class="right">
+                Модифікація що обладнана акселерометром.
+                <br /><br />Виріб обладнаний акселерометром чудово підходить для
+                створення замаскованих протипіхотних мінно-вибухових пасток що
+                реагують на рух.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section_block section_11" id="yakist">
+      <div class="container horizontal-scroll-container headline">
+        <div class="row">
+          <h2 class="block_title">
+            Етапи контролю якості<br />
+            та перевірки
+          </h2>
+          <a href="#" class="button-primary transparent">Звʼязатися з нами</a>
+        </div>
+        <div class="horizontal-scroll">
+          <div class="item">
+            <span>01. Оптичний контроль</span>
+            <div class="line"></div>
+            <p>
+              - Проводимо вхідну перевірку компонентів за допомогою сучасних
+              мікроскопів. - Перед фінальною збіркою здійснюємо додаткову
+              візуальну перевірку.
+            </p>
+          </div>
+          <div class="item">
+            <span>02. Оптичний контроль</span>
+            <div class="line"></div>
+            <p>
+              - Проводимо вхідну перевірку компонентів за допомогою сучасних
+              мікроскопів. - Перед фінальною збіркою здійснюємо додаткову
+              візуальну перевірку.
+            </p>
+          </div>
+          <div class="item">
+            <span>03. Оптичний контроль</span>
+            <div class="line"></div>
+            <p>
+              - Проводимо вхідну перевірку компонентів за допомогою сучасних
+              мікроскопів. - Перед фінальною збіркою здійснюємо додаткову
+              візуальну перевірку.
+            </p>
+          </div>
+          <div class="item">
+            <span>04. Оптичний контроль</span>
+            <div class="line"></div>
+            <p>
+              - Проводимо вхідну перевірку компонентів за допомогою сучасних
+              мікроскопів. - Перед фінальною збіркою здійснюємо додаткову
+              візуальну перевірку.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section_block section_12 faq_section" id="faq">
+      <div class="container">
+        <div class="block_title_row block_title_center">
+          <h2 class="block_title">Популярні питання</h2>
+        </div>
+
+        <div class="faq_item">
+          <div class="faq_item_num"><span>01</span></div>
+          <div class="faq_item_body">
+            <div class="faq_item_quest">
+              Для яких мінно-вибухових засобів підходить "Цвіркун"?
+            </div>
+            <div class="faq_item_answer">
+              Форм-фактор та спосіб інтеграції "Цвіркуна" дозволяють
+              використовувати його як зі штатними мінами ТМ-62, ПТМ-3 та іншими,
+              так і з СВУ.
+            </div>
+          </div>
+          <div class="faq_item_ctrl">
+            <button type="button" class="faq_item_button">
+              <span class="faq_item_button_vert"></span>
+              <span class="faq_item_button_hor"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="faq_item">
+          <div class="faq_item_num"><span>02</span></div>
+          <div class="faq_item_body">
+            <div class="faq_item_quest">
+              Для яких мінно-вибухових засобів підходить "Цвіркун"?
+            </div>
+            <div class="faq_item_answer">
+              Форм-фактор та спосіб інтеграції "Цвіркуна" дозволяють
+              використовувати його як зі штатними мінами ТМ-62, ПТМ-3 та іншими,
+              так і з СВУ.
+            </div>
+          </div>
+          <div class="faq_item_ctrl">
+            <button type="button" class="faq_item_button">
+              <span class="faq_item_button_vert"></span>
+              <span class="faq_item_button_hor"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="faq_item">
+          <div class="faq_item_num"><span>03</span></div>
+          <div class="faq_item_body">
+            <div class="faq_item_quest">
+              Для яких мінно-вибухових засобів підходить "Цвіркун"?
+            </div>
+            <div class="faq_item_answer">
+              Форм-фактор та спосіб інтеграції "Цвіркуна" дозволяють
+              використовувати його як зі штатними мінами ТМ-62, ПТМ-3 та іншими,
+              так і з СВУ.
+            </div>
+          </div>
+          <div class="faq_item_ctrl">
+            <button type="button" class="faq_item_button">
+              <span class="faq_item_button_vert"></span>
+              <span class="faq_item_button_hor"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="faq_item">
+          <div class="faq_item_num"><span>04</span></div>
+          <div class="faq_item_body">
+            <div class="faq_item_quest">
+              Для яких мінно-вибухових засобів підходить "Цвіркун"?
+            </div>
+            <div class="faq_item_answer">
+              Форм-фактор та спосіб інтеграції "Цвіркуна" дозволяють
+              використовувати його як зі штатними мінами ТМ-62, ПТМ-3 та іншими,
+              так і з СВУ.
+            </div>
+          </div>
+          <div class="faq_item_ctrl">
+            <button type="button" class="faq_item_button">
+              <span class="faq_item_button_vert"></span>
+              <span class="faq_item_button_hor"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page_footer" id="contaktu">
+      <div class="container">
+        <div class="footer_top">
+          <div class="footer_top_title block_title">
+            Хочете обговорити деталі або залишились питання?
+          </div>
+          <button type="button" class="button_black">
+            <span>Напишіть нам у Signal</span>
+            <svg
+              width="25"
+              height="26"
+              viewBox="0 0 25 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.1665 14.0417L4.1665 11.9583L16.6665 11.9583L10.9373 6.22917L12.4165 4.75L20.6665 13L12.4165 21.25L10.9373 19.7708L16.6665 14.0417L4.1665 14.0417Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="footer_form">
+          <div class="footer_form_title">
+            Щоб отримувати актуальні новини,<br />
+            підпишіться на нашу розсилку
+          </div>
+          <form class="footer_form_box" action="" method="post">
+            <div class="form_field">
+              <input type="text" name="email" placeholder="Введіть ваш email" />
+            </div>
+            <button type="button" class="send_subscr">
+              Підписатись на новини
+            </button>
+          </form>
+        </div>
+
+        <div class="footer_controls">
+          <a href="#">
+            <img src="img/logo_black.svg" alt="" />
+          </a>
+
+          <nav class="footer_controls_menu">
+            <a href="#">Головна</a>
+            <a href="#">Цвіркун</a>
+            <a href="#">Відео</a>
+            <a href="#">Контроль якості</a>
+            <a href="#">FAQ</a>
+            <a href="#">Контакти</a>
+          </nav>
+        </div>
+
+        <div class="footer_bottom">
+          <div class="footer_bottom_left">
+            <a href="#">Політика конфіденційності</a>
+          </div>
+          <div class="footer_bottom_right">
+            <span>@2024 Всі права захищені</span>
+            <a href="#"
+              >Created in
+              <svg
+                width="77"
+                height="16"
+                viewBox="0 0 77 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.55862 10.3095C2.55862 11.3369 2.85776 12.1433 3.45604 12.7287C4.05433 13.314 4.85628 13.6067 5.86191 13.6067C6.85481 13.6067 7.64403 13.32 8.22959 12.7466C8.81514 12.1612 9.10792 11.3489 9.10792 10.3095V3.37651C9.10792 3.1281 9.32249 2.92673 9.58719 2.92673H11.1873C11.452 2.92673 11.6665 3.1281 11.6665 3.37651V10.3095C11.6665 11.4086 11.431 12.3583 10.9601 13.1587C10.5018 13.9472 9.8335 14.5565 8.95516 14.9865C8.08956 15.4166 7.05848 15.6316 5.86191 15.6316C4.65261 15.6316 3.6088 15.4166 2.73047 14.9865C1.85213 14.5565 1.17747 13.9472 0.706484 13.1587C0.235495 12.3583 0 11.4086 0 10.3095V3.37651C0 3.1281 0.214577 2.92673 0.479271 2.92673H2.07935C2.34404 2.92673 2.55862 3.1281 2.55862 3.37651V10.3095Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M17.3898 3.37651C17.3898 3.1281 17.6044 2.92673 17.8691 2.92673H19.4692C19.7339 2.92673 19.9485 3.1281 19.9485 3.37651V15.0206C19.9485 15.269 19.7339 15.4704 19.4692 15.4704H17.8691C17.6044 15.4704 17.3898 15.269 17.3898 15.0206V3.37651Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M43.8096 2.79432C44.8152 2.79432 45.7508 2.9556 46.6164 3.27815C47.482 3.6007 48.233 4.05466 48.8695 4.64003C49.5187 5.22539 50.0215 5.90633 50.378 6.68285C50.7471 7.44741 50.9317 8.28365 50.9317 9.19157C50.9317 10.0875 50.7471 10.9298 50.378 11.7182C50.0215 12.5067 49.5187 13.1936 48.8695 13.779C48.233 14.3643 47.482 14.8243 46.6164 15.1588C45.7508 15.4813 44.8152 15.6426 43.8096 15.6426C42.8039 15.6426 41.8683 15.4813 41.0027 15.1588C40.1498 14.8243 39.3988 14.3643 38.7496 13.779C38.1004 13.1936 37.5912 12.5126 37.2221 11.7361C36.8657 10.9477 36.6874 10.0995 36.6874 9.19157C36.6874 8.28365 36.8657 7.44144 37.2221 6.66493C37.5912 5.88842 38.1004 5.21345 38.7496 4.64003C39.3988 4.05466 40.1498 3.6007 41.0027 3.27815C41.8683 2.9556 42.8039 2.79432 43.8096 2.79432ZM43.8477 4.81922C43.224 4.81922 42.6385 4.93271 42.0911 5.15969C41.5437 5.37472 41.06 5.68533 40.6399 6.0915C40.2199 6.48573 39.8889 6.94566 39.647 7.4713C39.4179 7.99694 39.3033 8.57036 39.3033 9.19157C39.3033 9.81278 39.4243 10.3922 39.6661 10.9298C39.908 11.4554 40.239 11.9213 40.659 12.3275C41.0791 12.7337 41.5628 13.0502 42.1102 13.2772C42.6575 13.5042 43.2367 13.6177 43.8477 13.6177C44.4588 13.6177 45.0316 13.5042 45.5662 13.2772C46.1136 13.0502 46.591 12.7337 46.9983 12.3275C47.4056 11.9213 47.7239 11.4554 47.953 10.9298C48.1949 10.3922 48.3158 9.81278 48.3158 9.19157C48.3158 8.57036 48.1949 7.99694 47.953 7.4713C47.7239 6.94566 47.4056 6.48573 46.9983 6.0915C46.591 5.68533 46.1136 5.37472 45.5662 5.15969C45.0316 4.93271 44.4588 4.81922 43.8477 4.81922Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M58.7525 2.93768C60.4837 2.93768 61.8203 3.31399 62.7623 4.0666C63.7043 4.81922 64.1753 5.87647 64.1753 7.23835C64.1753 8.65996 63.7043 9.76499 62.7623 10.5534C61.8203 11.3419 60.4837 11.7361 58.7525 11.7361H56.2149C55.9502 11.7361 55.7357 11.9375 55.7357 12.1859V15.0315C55.7357 15.2799 55.5211 15.4813 55.2564 15.4813H53.6563C53.3916 15.4813 53.177 15.2799 53.177 15.0315V3.38746C53.177 3.13905 53.3916 2.93768 53.6563 2.93768H58.7525ZM58.7525 9.74707C59.7072 9.74707 60.4456 9.54399 60.9675 9.13781C61.4894 8.73164 61.7503 8.1164 61.7503 7.29211C61.7503 6.50365 61.4894 5.91828 60.9675 5.536C60.4456 5.14177 59.7072 4.94466 58.7525 4.94466H56.2149C55.9502 4.94466 55.7357 5.14603 55.7357 5.39444V9.29729C55.7357 9.5457 55.9502 9.74707 56.2149 9.74707H58.7525ZM59.0752 11.4979C58.8896 11.1981 59.1202 10.8222 59.4896 10.8222H60.9008C61.0617 10.8222 61.2118 10.898 61.3005 11.0239L63.9506 14.7834C64.1614 15.0824 63.9329 15.4813 63.5509 15.4813H61.8162C61.6454 15.4813 61.4875 15.396 61.4017 15.2574L59.0752 11.4979Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M66.9756 3.38746C66.9756 3.13905 67.1901 2.93768 67.4548 2.93768H76.2916C76.5563 2.93768 76.7709 3.13905 76.7709 3.38746V4.49487C76.7709 4.74328 76.5563 4.94466 76.2916 4.94466H70.0135C69.7488 4.94466 69.5342 5.14603 69.5342 5.39444V7.73829C69.5342 7.9867 69.7488 8.18808 70.0135 8.18808H75.5469C75.8116 8.18808 76.0262 8.38946 76.0262 8.63787V9.72736C76.0262 9.97577 75.8116 10.1771 75.5469 10.1771H70.0135C69.7488 10.1771 69.5342 10.3785 69.5342 10.6269V13.0245C69.5342 13.2729 69.7488 13.4743 70.0135 13.4743H76.5207C76.7854 13.4743 77 13.6757 77 13.9241V15.0315C77 15.2799 76.7854 15.4813 76.5207 15.4813H67.4548C67.1901 15.4813 66.9756 15.2799 66.9756 15.0315V3.38746Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M13.6008 5.32076L17.5863 2.99913C17.776 2.88863 18.0258 2.95301 18.1288 3.13893L18.8402 4.42369C18.9321 4.58967 18.8732 4.79406 18.7046 4.8939L14.8754 7.16224C14.699 7.26673 14.466 7.21972 14.3509 7.05644L13.4831 5.82496C13.364 5.65582 13.4172 5.4277 13.6008 5.32076Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M31.944 4.40979V3.7171C31.944 3.65751 31.965 3.59959 32.0037 3.55238L33.9311 1.20469C34.1302 0.962217 33.8134 0.645197 33.5428 0.816052L30.5246 2.72162C30.4771 2.75158 30.4213 2.76754 30.3641 2.7677C29.5635 2.76992 28.7001 2.80196 28.4054 2.84014C28.1069 2.87973 27.6024 2.98528 27.2898 3.07764C26.9771 3.16999 26.5295 3.33492 26.295 3.44707C26.0605 3.55262 25.6768 3.76373 25.4423 3.90886C25.2078 4.06059 24.8312 4.34426 24.5967 4.54218C24.3694 4.74668 24.0425 5.07653 23.8791 5.27445C23.7085 5.47236 23.4456 5.86158 23.2822 6.13206C23.1259 6.40254 22.9127 6.84454 22.8132 7.10842C22.7137 7.3657 22.5858 7.87367 22.5219 8.22331C22.4437 8.67851 22.4224 9.06773 22.4508 9.52953C22.4722 9.89236 22.5432 10.3805 22.6001 10.618C22.664 10.8555 22.7777 11.2118 22.8559 11.4097C22.934 11.6076 23.133 11.9968 23.2893 12.2673C23.4456 12.5378 23.7085 12.927 23.8791 13.1249C24.0425 13.3228 24.3694 13.6527 24.5967 13.8572C24.8312 14.0551 25.2078 14.3388 25.4423 14.4905C25.6768 14.6356 26.0605 14.8467 26.295 14.9523C26.5295 15.0644 26.9771 15.2294 27.2898 15.3217C27.6024 15.4141 28.1069 15.5196 28.4054 15.5592C28.7014 15.5976 29.7978 15.6297 32.7222 15.6317C32.881 15.6318 33.0098 15.5109 33.0098 15.3619V13.9201C33.0098 13.772 32.8827 13.6516 32.7249 13.6502L30.702 13.6328C28.455 13.6131 28.4185 13.6128 27.8582 13.4416C27.5456 13.3426 27.0482 13.1183 26.7569 12.9402C26.4655 12.7687 26.0321 12.4256 25.7976 12.1881C25.5631 11.9506 25.2505 11.5416 25.1083 11.2711C24.9591 11.0007 24.7744 10.5323 24.6891 10.2222C24.5612 9.75382 24.5399 9.54272 24.5754 8.96878C24.6038 8.45421 24.6678 8.13755 24.8099 7.74833C24.9165 7.45806 25.1581 7.00946 25.3428 6.75878C25.5205 6.50809 25.8473 6.15185 26.0534 5.96713C26.2666 5.78901 26.629 5.52513 26.8634 5.39319C27.0979 5.26125 27.5456 5.06994 27.8582 4.97758C28.2692 4.84623 28.546 4.7979 29.5244 4.782C29.6274 4.78032 29.7238 4.831 29.7762 4.91424L31.07 6.96988C31.8232 8.17713 32.4272 9.18648 32.4129 9.21287C32.3998 9.24343 32.161 9.38723 31.3914 9.80689C31.2778 9.86881 31.1336 9.85058 31.0417 9.76253L29.6346 8.41463C28.7749 7.5966 28.043 6.9237 28.0003 6.9237C27.9606 6.9237 27.6613 7.17616 26.7508 8.01819C26.6368 8.1236 26.6366 8.29635 26.7503 8.40198L28.7109 10.2222C29.9046 11.3305 30.8994 12.2409 30.9279 12.2475C30.9634 12.2541 31.34 12.076 31.7734 11.8517C32.2069 11.6274 33.1732 11.1194 33.9193 10.717C34.6725 10.3146 35.2836 9.96493 35.2836 9.92535C35.2836 9.88597 34.5452 8.66481 31.9839 4.54703C31.9582 4.50574 31.944 4.45761 31.944 4.40979Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M33.5428 0.816052L30.5788 2.68736C30.4994 2.7375 30.4518 2.82145 30.4518 2.91128V3.62519H31.8025C31.8917 3.62519 31.9758 3.58634 32.0303 3.52002L33.9311 1.20469C34.1302 0.962217 33.8134 0.645197 33.5428 0.816052Z"
+                  fill="#212121"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile_menu">
+      <div class="mobile_menu_inner">
+        <nav class="mobile_nav">
+          <ul>
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Цвіркун</a></li>
+            <li><a href="#">Застосування</a></li>
+            <li><a href="#">Відео</a></li>
+            <li><a href="#">Контроль якості</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile_menu_body">
+          <a href="#" class="button-primary">Message us on Signal</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
+    <!-- <script type="module" src="js/js/main.js"></script> -->
+    <script src="js/mainOld.js"></script>
+  </body>
+</html>
