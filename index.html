@@ -14,6 +14,21 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="loader" id="js-loader">
+      <div class="top">
+        <img src="img/Logo.svg" alt="" class="logo"/>
+        <span class="loader__text">
+          Loading...
+        </span>
+      </div>
+      
+      <img src="img/loaderImage.png" alt="" class="loader__image"/>
+      <h1 class="loader__number" id="js-loader-num">0%</h1>
+      <div class="loader__line-wrapper">
+        <span class="loader__line" id="js-loader-line"></span> 
+      </div> 
+    </div>
+
     <div class="indicator"></div>
 
     <div class="header_box">
@@ -198,7 +213,7 @@
       <div class="container">
         <div class="video-block">
           <div class="video-area">
-            <video class="video" muted>
+            <video class="video" muted poster="img/video-thumbnail.jpg">
               <source src="img/video.mp4" type="video/mp4" />
             </video>
           </div>
@@ -225,13 +240,13 @@
         <div class="slider">
           <div class="slider-track">
             <div class="slide">
-              <video class="video" muted loop>
+              <video class="video" muted loop poster="img/video-thumbnail1.jpg">
                 <source src="img/video_2.mp4" type="video/mp4" />
               </video>
               <div class="play-icon"></div>
             </div>
             <div class="slide">
-              <video class="video" muted loop>
+              <video class="video" muted loop poster="img/video-thumbnail1.jpg">
                 <source src="img/video_2.mp4" type="video/mp4" />
               </video>
               <div class="play-icon"></div>

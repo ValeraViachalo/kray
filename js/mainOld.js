@@ -15,16 +15,32 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+gsap.to("#js-loader-num", {
+  innerText: 100,
+  duration: 5,
+  ease: "power2.out",
+  snap: { innerText: 1 },
+  onUpdate: function() {
+    document.getElementById("js-loader-num").innerText = Math.round(this.targets()[0].innerText) + "%";
+  },
+  onComplete: function() {
+    gsap.to("#js-loader", { opacity: 0, duration: 1, display: "none" });
+  }
+});
+
+gsap.to("#js-loader-line", {
+  clipPath: "inset(0% 0% 0% 0%)",
+  duration: 5,
+  ease: "power2.out"
+});
+
 // Анимация ширины и масштаба видео при скролле
 gsap.fromTo(
   video,
   {
-    width: "872px",
-    scale: 1,
+    scale: .8,
   },
   {
-    width: "100%",
-    height: "713px",
     scale: 1,
     ease: "power2.out",
     scrollTrigger: {
