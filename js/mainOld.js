@@ -274,137 +274,132 @@ if (
 
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("animationCanvas");
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    const box = document.querySelector(".back_image canvas");
-    const box_par = document.querySelector(".back_image");
-    const spriteFolder = "./sprite2/";
-    const stopBlock = document.querySelector(".stop-block");
+  if (!canvas) return;
 
-    const totalFrames = 190;
-    let currentFrame = 0;
-    let images = new Array(totalFrames);
+  const ctx = canvas.getContext("2d");
+  const box = document.querySelector(".back_image canvas");
+  const box_par = document.querySelector(".back_image");
+  const spriteFolder = "./sprite2/";
+  const stopBlock = document.querySelector(".stop-block");
 
-    function preloadImages() {
-      for (let i = 0; i < totalFrames; i++) {
-        const img = new Image();
-        img.src = `${spriteFolder}${i + 1}.webp`;
+  const totalFrames = 190;
+  let currentFrame = 0;
+  let images = new Array(totalFrames);
 
-        img.onload = () => {
-          images[i] = img;
-          if (i === currentFrame) drawFrame();
-        };
+  function preloadImages() {
+    for (let i = 0; i < totalFrames; i++) {
+      const img = new Image();
+      img.src = `${spriteFolder}${i + 1}.webp`;
 
-        img.onerror = () => {
-          console.error(`Failed to load image: ${spriteFolder}${i + 1}.webp`);
-        };
-      }
+      img.onload = () => {
+        images[i] = img;
+        if (i === currentFrame) drawFrame();
+      };
+
+      img.onerror = () => {
+        console.error(`Failed to load image: ${spriteFolder}${i + 1}.webp`);
+      };
     }
-
-    function drawFrame() {
-      if (images[currentFrame] && images[currentFrame].complete) {
-        const dpr = 1;
-        canvas.width = canvas.clientWidth * dpr;
-        canvas.height = canvas.clientHeight * dpr;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
-      }
-    }
-
-    ScrollTrigger.create({
-      trigger: document.body,
-      pin: box_par,
-      start: "top top",
-      end: () =>
-        stopBlock.offsetTop + stopBlock.clientHeight - box_par.clientHeight,
-      scrub: true,
-      onUpdate: (self) => {
-        let frame = Math.round(self.progress * (totalFrames - 1));
-        if (frame !== currentFrame) {
-          currentFrame = frame;
-          drawFrame();
-        }
-
-        var offset_start, offset_middle, offset_y_start, offset_y_end;
-        if (window.innerWidth >= 1200 && window.innerWidth < 1400) {
-          offset_start = -250;
-          offset_middle = 350;
-          offset_y_start = 150;
-          offset_y_end = 0;
-        } else if (window.innerWidth >= 960 && window.innerWidth < 1200) {
-          offset_start = -40;
-          offset_middle = 500;
-          offset_y_start = 350;
-          offset_y_end = 0;
-        } else if (window.innerWidth >= 768 && window.innerWidth < 960) {
-          offset_start = -150;
-          offset_middle = 0;
-          offset_y_start = 420;
-          offset_y_end = 150;
-        } else if (window.innerWidth < 768) {
-          offset_start = -60;
-          offset_middle = 0;
-          offset_y_start = 460;
-          offset_y_end = 400;
-        } else {
-          offset_start = -40;
-          offset_middle = 500;
-          offset_y_start = 150;
-          offset_y_end = 0;
-        }
-
-        var offsetX, offsetY;
-        if (self.progress < 0.075) {
-          offsetX = gsap.utils.mapRange(
-            0,
-            0.1,
-            offset_start,
-            offset_middle,
-            self.progress
-          );
-        } else if (self.progress >= 0.66) {
-          offsetX = gsap.utils.mapRange(
-            0.66,
-            1,
-            offset_middle,
-            0,
-            self.progress
-          );
-        } else {
-          offsetX = offset_middle;
-        }
-
-        if (self.progress < 0.075) {
-          offsetY = gsap.utils.mapRange(
-            0,
-            0.1,
-            offset_y_start,
-            offset_y_end,
-            self.progress
-          );
-        } else if (self.progress >= 0.86) {
-          offsetY = gsap.utils.mapRange(
-            0.86,
-            1,
-            offset_y_start,
-            0,
-            self.progress
-          );
-        } else {
-          offsetY = offset_y_end;
-        }
-
-        gsap.to(box.parentElement, {
-          x: offsetX,
-          y: offsetY,
-          duration: 0.5,
-          ease: "power2.out",
-        });
-      },
-    });
-
-    preloadImages();
   }
+
+  function drawFrame() {
+    if (images[currentFrame] && images[currentFrame].complete) {
+      const dpr = 1;
+      canvas.width = canvas.clientWidth * dpr;
+      canvas.height = canvas.clientHeight * dpr;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  function calculateOffsets() {
+    if (window.innerWidth >= 1200 && window.innerWidth < 1400) {
+      return { offset_start: -250, offset_middle: 350, offset_y_start: 150, offset_y_end: 0 };
+    } else if (window.innerWidth >= 960 && window.innerWidth < 1200) {
+      return { offset_start: -40, offset_middle: 500, offset_y_start: 350, offset_y_end: 0 };
+    } else if (window.innerWidth >= 768 && window.innerWidth < 960) {
+      return { offset_start: -150, offset_middle: 0, offset_y_start: 420, offset_y_end: 150 };
+    } else if (window.innerWidth < 768) {
+      return { offset_start: 0, offset_middle: -20, offset_y_start: 0, offset_y_end: -200 };
+    } else {
+      return { offset_start: -40, offset_middle: 400, offset_y_start: 150, offset_y_end: 0 };
+    }
+  }
+
+  function updateOffsets(self, offsets) {
+    let offsetX, offsetY;
+
+    if (self.progress < 0.075) {
+      offsetX = gsap.utils.mapRange(0, 0.07, offsets.offset_start, offsets.offset_middle, self.progress);
+      offsetY = gsap.utils.mapRange(0, 0.07, offsets.offset_y_start, offsets.offset_y_end, self.progress);
+    } else if (self.progress >= 0.66) {
+      offsetX = gsap.utils.mapRange(0.66, 1, offsets.offset_middle, 0, self.progress);
+    } else {
+      offsetX = offsets.offset_middle;
+      offsetY = offsets.offset_y_end;
+    }
+
+    gsap.to(box.parentElement, {
+      x: offsetX,
+      y: offsetY,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }
+
+  ScrollTrigger.create({
+    trigger: document.body,
+    pin: box_par,
+    start: "top top",
+    end: () => stopBlock.offsetTop + stopBlock.clientHeight - box_par.clientHeight,
+    scrub: true,
+    onUpdate: (self) => {
+      let frame = Math.round(self.progress * (totalFrames - 1));
+      if (frame !== currentFrame) {
+        currentFrame = frame;
+        drawFrame();
+      }
+
+      const offsets = calculateOffsets();
+      updateOffsets(self, offsets);
+    },
+  });
+
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    // Animation for screens wider than 768px
+    gsap.fromTo(box, {
+      scale: 2,
+      yPercent: 20,
+      xPercent: -10,
+    }, {
+      scale: 1,
+      yPercent: 0,
+      xPercent: 0,
+      scrollTrigger: {
+        trigger: '.section_block.section_1',
+        start: "0% 0%",
+        end: "40% 0%",
+        scrub: true,
+      }
+    });
+  });
+
+  mm.add("(max-width: 768px)", () => {
+    gsap.to(box, {
+      scale: .5,
+      scrollTrigger: {
+        trigger: '.section_block.section_6',
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        markers: true
+      }
+    })
+  });
+  
+  preloadImages();
 });
 
 document.addEventListener("DOMContentLoaded", function () {

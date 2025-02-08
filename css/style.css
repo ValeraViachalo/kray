@@ -1463,6 +1463,34 @@ footer{
 
 @media all and (max-width:767px){
 
+	.back_image{
+		top: 450px;
+		/* bottom: 100px; */
+		left:0%;
+		transform: translate(-20%, 0);
+
+		width: 200vw;
+	}
+
+	.scroll_section{
+		height:100lvh;
+	}
+	.scroll_section.section_1{
+		height:150lvh;
+	}
+	.scroll_section.section_2{
+		height:150lvh;
+	}
+	
+	.scroll_section.section_3{
+		height:150lvh;
+	}
+	
+	.scroll_section.section_5{
+		height:150lvh;
+	}
+	
+
 	.faq_section + .page_footer .container{
 		transform: translateY(0%);
 	}
