@@ -516,10 +516,19 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.toggle("open");
     });
   });
+
   document.querySelectorAll(".burger").forEach((item) => {
     item.addEventListener("click", function () {
       this.classList.toggle("open");
       document.querySelector(".mobile_menu").classList.toggle("open");
+    });
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll(".mobile_menu .mobile_nav_link").forEach((link) => {
+    link.addEventListener("click", function () {
+      document.querySelector(".burger").classList.remove("open");
+      document.querySelector(".mobile_menu").classList.remove("open");
     });
   });
 
