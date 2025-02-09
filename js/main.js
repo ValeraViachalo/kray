@@ -413,6 +413,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     gsap.to(box, {
+      xPercent: -5,
+      scrollTrigger: {
+        trigger: '.section_block.section_4',
+        start: "50% 100%",
+        end: "60% 0%",
+        scrub: true,
+      }
+    })
+    gsap.to(box, {
       scale: .5,
       scrollTrigger: {
         trigger: '.section_block.section_6',
@@ -507,6 +516,14 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.to(`#mobile-text-section-${sectionNumber}`, { opacity: 1, duration: 0.5 });
   }
 
+  // Function to handle progress bar update based on the current scroll section
+  function handleProgressBarUpdate(sectionNumber) {
+    gsap.to(`.progress-bar .number`, { height: '0em', duration: 0.5 });
+    gsap.to(`.progress-bar .line`, { opacity: 0.4, duration: 0.5 });
+    gsap.to(`#progress-bar-${sectionNumber} .number`, { height: '1.2em', duration: 0.5 });
+    gsap.to(`#progress-bar-${sectionNumber} .line`, { opacity: 1, duration: 0.5 });
+  }
+
   // Loop through each scroll section and create ScrollTrigger instances
   const sections = document.querySelectorAll(".scroll_section");
   sections.forEach((section, index) => {
@@ -516,9 +533,28 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: section,
       start: "top center",
       end: "bottom center",
-      onEnter: () => handleOpacityChange(sectionNumber),
-      onEnterBack: () => handleOpacityChange(sectionNumber),
+      onEnter: () => {
+        handleOpacityChange(sectionNumber);
+        handleProgressBarUpdate(sectionNumber);
+      },
+      onEnterBack: () => {
+        handleOpacityChange(sectionNumber);
+        handleProgressBarUpdate(sectionNumber);
+      },
     });
+  });
+
+  // Set opacity to 0 when reaching the .stop-block
+  ScrollTrigger.create({
+    trigger: ".stop-block",
+    start: "top 100%",
+    end: "top 0%",
+    onEnter: () => {
+      gsap.to(".mobile_pinned", { opacity: 0, duration: 0.5 });
+    },
+    onLeaveBack: () => {
+      gsap.to(".mobile_pinned", { opacity: 1, duration: 0.5 });
+    },
   });
 });
 

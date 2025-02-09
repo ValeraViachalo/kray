@@ -194,6 +194,46 @@ body {
   clip-path: inset(0 100% 0 0);
 }
 
+.progress_bar-wrapper {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-bar {
+  position: relative;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.progress-bar .number {
+  font-weight: 400;
+  font-size: 24px;
+
+  color: #ffffff;
+
+  position: relative;
+  z-index: 10;
+
+  height: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.progress-bar .line {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: -5px;
+  right: -5px;
+  background-color: #fff;
+  opacity: 0.4;
+}
+
 @media all and (max-width: 1400px) {
   .header nav ul li {
     margin-right: 25px;

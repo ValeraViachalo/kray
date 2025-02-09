@@ -16,17 +16,15 @@
   <body>
     <div class="loader" id="js-loader">
       <div class="top">
-        <img src="img/Logo.svg" alt="" class="logo"/>
-        <span class="loader__text">
-          Loading...
-        </span>
+        <img src="img/Logo.svg" alt="" class="logo" />
+        <span class="loader__text"> Loading... </span>
       </div>
-      
-      <img src="img/loaderImage.webp" alt="" class="loader__image"/>
+
+      <img src="img/loaderImage.webp" alt="" class="loader__image" />
       <h1 class="loader__number" id="js-loader-num">0%</h1>
       <div class="loader__line-wrapper">
-        <span class="loader__line" id="js-loader-line"></span> 
-      </div> 
+        <span class="loader__line" id="js-loader-line"></span>
+      </div>
     </div>
 
     <div class="indicator"></div>
@@ -65,7 +63,7 @@
           <canvas id="animationCanvas"></canvas>
         </div>
       </div>
-      <section class="section_block section_1 scroll_section">
+      <section class="section_block section_1 scroll_section" id="top">
         <div class="container">
           <div class="right">
             <h1>
@@ -85,6 +83,30 @@
           </div>
         </div>
       </section>
+
+      <div class="progress_bar-wrapper">
+        <a href="#top" class="progress-bar" id="progress-bar-1">
+          <span class="number">01</span>
+          <div class="line"></div>
+        </a>
+        <a href="#cvirkun" class="progress-bar" id="progress-bar-2">
+          <span class="number">02</span>
+          <div class="line"></div>
+        </a>
+        <a href="#sec_3" class="progress-bar" id="progress-bar-3">
+          <span class="number">03</span>
+          <div class="line"></div>
+        </a>
+        <a href="#sec_4" class="progress-bar" id="progress-bar-4">
+          <span class="number">04</span>
+          <div class="line"></div>
+        </a>
+        <a href="#sec_5" class="progress-bar" id="progress-bar-5">
+          <span class="number">05</span>
+          <div class="line"></div>
+        </a>
+      </div>
+
       <div class="mobile_pinned container">
         <div class="scroll_text_container" id="mobile-text-section-2">
           <h2>«Цвіркун»</h2>
@@ -97,15 +119,13 @@
         </div>
         <div class="scroll_text_container" id="mobile-text-section-3">
           <p class="scroll_text">
-            Інтелектуальне виявлення: реагує на спотворення магнітного
-            поля.
+            Інтелектуальне виявлення: реагує на спотворення магнітного поля.
           </p>
         </div>
         <div class="scroll_text_container" id="mobile-text-section-4">
           <p class="scroll_text">
-            Універсальність: компактна конструкція дозволяє інтегрувати
-            модуль із різними штатними та саморобними вибуховими
-            пристроями.
+            Універсальність: компактна конструкція дозволяє інтегрувати модуль
+            із різними штатними та саморобними вибуховими пристроями.
           </p>
         </div>
       </div>
@@ -130,7 +150,7 @@
           </div>
         </div>
       </div>
-      <div class="section_block section_3 scroll_section scroll_container">
+      <div class="section_block section_3 scroll_section scroll_container" id="sec_3">
         <div class="container">
           <div class="row">
             <div class="left">
@@ -144,7 +164,7 @@
           </div>
         </div>
       </div>
-      <div class="section_block section_4 scroll_section scroll_container">
+      <div class="section_block section_4 scroll_section scroll_container" id="sec_4">
         <div class="container">
           <div class="row">
             <div class="left">
@@ -159,7 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="section_block section_5 scroll_section scroll_container">
+      <div class="section_block section_5 scroll_section scroll_container" id="sec_5">
         <div class="container">
           <div class="row">
             <div class="left">
@@ -592,8 +612,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> 
-    <!-- <script type="module" src="js/js/main.js"></script> -->
-    <script src="js/mainOld.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
