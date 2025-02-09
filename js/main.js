@@ -305,7 +305,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function preloadImages() {
     for (let i = 0; i < totalFrames; i++) {
       const img = new Image();
-      img.src = `${spriteFolder}${i + 1}.webp`;
+      // img.src = `${spriteFolder}(${i + 1}).webp`;
+      img.src = `sprite2/(${i + 1}).webp`;
 
       img.onload = () => {
         images[i] = img;
@@ -313,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       img.onerror = () => {
-        console.error(`Failed to load image: ${spriteFolder}${i + 1}.webp`);
+        console.error(`Failed to load image: sprite2/(${i + 1}).webp`);
       };
     }
   }
@@ -404,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mm.add("(max-width: 768px)", () => {
     gsap.to(box, {
-      yPercent: 20,
+      yPercent: 22,
       scrollTrigger: {
         trigger: '.section_block.section_1',
         start: "0% 0%",
