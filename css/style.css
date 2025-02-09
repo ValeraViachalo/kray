@@ -17,9 +17,15 @@ span {
 body {
   /* background: url("../img/fullbg.jpg");
   background-size: auto; */
-	background-color: #000;
+  background-color: #000;
   overflow-x: hidden;
+
+  /* contain: paint; */
   cursor: url("../img/mynaui_plus.svg") 24 24, auto;
+}
+
+.loader {
+  display: none !important;
 }
 
 .container {
@@ -163,8 +169,8 @@ body {
 
   color: #ffffff;
 
-	position: relative;
-	z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .loader .loader__image {
@@ -173,24 +179,23 @@ body {
   width: 100%;
   height: 100%;
 
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .loader .loader__line-wrapper {
-	position: absolute;
-	/* width: 100%; */
-	height: 3px;
-	background-color: #ffffff3a;
+  position: absolute;
+  /* width: 100%; */
+  height: 3px;
+  background-color: #ffffff3a;
   inset: auto 40px 50px 40px;
-
 }
 
 .loader .loader__line {
-	position: absolute;
-	width: 100%;
-	height: 3px;
-	background-color: #ffffff;
-	clip-path: inset(0 100% 0 0);
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  clip-path: inset(0 100% 0 0);
 }
 
 @media all and (max-width: 1400px) {
@@ -267,23 +272,7 @@ body {
 .back_image canvas {
   width: 100%;
   height: 100%;
-  /*
-	position:absolute;
-	left:0;
-	top:0;*/
 }
-
-/*
-.section_1::before {
-	width: 100%;
-	height: 100%;
-	background: url(../img/bg_first_screen.png) no-repeat center;
-	background-size: 70% 100%;
-	position: absolute;
-	content: "";
-	top: 33%;
-	left: -18%
-}*/
 
 .block_title {
   font-size: 56px;
@@ -357,6 +346,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.mobile_pinned {
+  display: none;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -368,16 +361,27 @@ body {
   max-width: 733px;
 }
 
-.row .left h2 {
-  /*margin-bottom: 360px*/
+.scroll_text_container h2 {
+  font-weight: 700;
+  font-size: 44px;
+
+  leading-trim: both;
+  text-edge: cap;
 }
 
 .section_2 .scroll_text_first {
-  margin-top: 360px;
+  margin-top: 20px !important;
 }
 
-.scroll_text_container {
+.scroll_section {
+  position: relative;
+}
+
+.scroll_section .container {
   width: 100%;
+
+  position: sticky;
+  top: 40%;
 }
 
 .row .left p {
@@ -495,7 +499,7 @@ body {
   max-width: 100%;
   height: 715px;
   position: relative;
-  margin: 200px auto 0;
+  margin: 150px auto 0;
   border-radius: 16px;
 }
 
@@ -510,6 +514,7 @@ body {
   display: block;
   border-radius: 16px;
   cursor: pointer;
+  transform-origin: top;
 }
 
 .section_8 .play-icon {
@@ -537,6 +542,7 @@ body {
 .scroll_text span {
   color: #6e6e6e;
   transition: color 0.3s ease;
+  margin-right: 0.3em;
 }
 
 @media all and (max-width: 1400px) {
@@ -1310,7 +1316,8 @@ footer,
   .section_9,
   .section_11,
   .anim_container {
-    overflow: hidden;
+    overflow-x: hidden;
+    /* contain: paint; */
   }
   .section_10 .right .item {
     display: flex;
@@ -1531,22 +1538,57 @@ footer,
     width: 200vw;
   }
 
+  .mobile_pinned {
+    display: block;
+    position: fixed;
+    width: 90%;
+    top: 10%;
+    left: 20px;
+    right: 20px;
+  }
+
+  .mobile_pinned h2 {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 130%;
+  }
+
+  .mobile_pinned .scroll_text_container {
+    line-height: 130%;
+    font-size: 20px;
+    font-weight: 300;
+    position: absolute;
+    top: 0;
+  }
+
+  .scroll_section .row {
+    display: none;
+  }
+
   .scroll_section {
-    height: 100lvh;
+    height: 100vh;
   }
   .scroll_section.section_1 {
-    height: 150lvh;
+    height: 100vh;
+    display: block !important;
   }
   .scroll_section.section_2 {
-    height: 150lvh;
+    height: 150vh;
   }
 
   .scroll_section.section_3 {
-    height: 150lvh;
+    height: 150vh;
   }
 
   .scroll_section.section_5 {
-    height: 150lvh;
+    height: 150vh;
+  }
+
+  .scroll_section .container {
+    width: 100%;
+
+    position: sticky;
+    top: 20%;
   }
 
   .faq_section + .page_footer .container {
@@ -1688,20 +1730,20 @@ footer,
     padding: 55px 20px 36px;
   }
 
-	.section_8 .video-block {
-		height: auto;
-		aspect-ratio: 16/9;
-	}
+  .section_8 .video-block {
+    height: auto;
+    aspect-ratio: 16/9;
+  }
 
-	.section_8 .video-block .video {
-		transform: none !important;
-	}
+  .section_8 .video-block .video {
+    transform: none !important;
+  }
 
-	.play-icon {
-		width: 80px !important;
-		height: 80px !important;
-		transform: translate(-50%, -50%) !important;
-	}
+  .play-icon {
+    width: 80px !important;
+    height: 80px !important;
+    transform: translate(-50%, -50%) !important;
+  }
 
   .faq_item_ctrl {
     width: 42px;

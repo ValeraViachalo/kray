@@ -404,6 +404,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mm.add("(max-width: 768px)", () => {
     gsap.to(box, {
+      yPercent: 30,
+      scrollTrigger: {
+        trigger: '.section_block.section_1',
+        start: "0% 0%",
+        end: "40% 0%",
+        scrub: true,
+      }
+    })
+    gsap.to(box, {
       scale: .5,
       scrollTrigger: {
         trigger: '.section_block.section_6',
@@ -421,50 +430,29 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".scroll_container").forEach((container, index) => {
     let textElement = container.querySelector(".scroll_text");
 
-    let letters = textElement.innerText
-      .split("")
-      .map((char) => {
-        return `<span>${char === " " ? "&nbsp;" : char}</span>`;
-      })
-      .join("");
+    // Split text into words and wrap each word in a span
+    let words = textElement.innerText.split(" ");
+    let wrappedWords = words.map((word) => {
+      return `<span class="word">${word}</span>`;
+    }).join(" ");
 
-    textElement.innerHTML = letters;
-    var spans = textElement.querySelectorAll("span");
+    textElement.innerHTML = wrappedWords;
+    var spans = textElement.querySelectorAll("span.word");
 
-    if (index === 0) {
-      gsap.set(textElement, { marginTop: "360px" });
-    }
-
+    let t_start, t_end;
     if (window.innerWidth >= 960 && window.innerWidth < 1200) {
-      var t_start = "top center";
-      var t_end = `bottom-=15% center`;
+      t_start = "top center";
+      t_end = `bottom-=15% center`;
     } else if (window.innerWidth >= 768 && window.innerWidth < 960) {
-      var t_start = "top center+=20%";
-      var t_end = `bottom center`;
+      t_start = "top center+=20%";
+      t_end = `bottom center`;
     } else if (window.innerWidth < 768) {
-      var t_start = "top top+=100px";
-      var t_end = `bottom bottom`;
+      t_start = "top top+=100px";
+      t_end = `bottom bottom`;
     } else {
-      var t_start = "top center";
-      var t_end = `bottom-=15% center`;
+      t_start = "top center";
+      t_end = `bottom-=15% center`;
     }
-
-    gsap.to(textElement, {
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: t_start,
-        end: () => t_end,
-        scrub: 1,
-        pin: textElement,
-        pinSpacing: true,
-        onUpdate: (self) => {
-          if (index === 0 && self.progress > 0) {
-            gsap.set(textElement, { marginTop: "-360px" });
-          }
-        },
-      },
-    });
 
     gsap.fromTo(
       textElement,
@@ -489,8 +477,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "none",
         scrollTrigger: {
           trigger: container,
-          start: "bottom 50%", // Начинает исчезать
-          end: "bottom 15%", // Полностью исчезает
+          start: "bottom 50%",
+          end: "bottom 50%",
           scrub: 1,
         },
       }
@@ -506,6 +494,30 @@ document.addEventListener("DOMContentLoaded", function () {
         end: () => `bottom-=20% center`,
         scrub: 1,
       },
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Function to handle opacity change based on the current scroll section
+  function handleOpacityChange(sectionNumber) {
+    gsap.to(`.mobile_pinned .scroll_text_container`, { opacity: 0, duration: 0.5 });
+    gsap.to(`#mobile-text-section-${sectionNumber}`, { opacity: 1, duration: 0.5 });
+  }
+
+  // Loop through each scroll section and create ScrollTrigger instances
+  const sections = document.querySelectorAll(".scroll_section");
+  sections.forEach((section, index) => {
+    const sectionNumber = index + 1; // Adjust the section number to match the IDs
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top center",
+      end: "bottom center",
+      onEnter: () => handleOpacityChange(sectionNumber),
+      onEnterBack: () => handleOpacityChange(sectionNumber),
     });
   });
 });
