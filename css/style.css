@@ -1312,7 +1312,7 @@ footer,
   .section_9,
   .section_11,
   .anim_container {
-    overflow-x: hidden;
+    overflow: hidden;
     /* contain: paint; */
   }
   .section_10 .right .item {
