@@ -551,9 +551,11 @@ document.addEventListener("DOMContentLoaded", function () {
     end: "top 0%",
     onEnter: () => {
       gsap.to(".mobile_pinned", { opacity: 0, duration: 0.5 });
+      gsap.to(".progress_bar-wrapper", { opacity: 0, duration: 0.5 });
     },
     onLeaveBack: () => {
       gsap.to(".mobile_pinned", { opacity: 1, duration: 0.5 });
+      gsap.to(".progress_bar-wrapper", { opacity: 1, duration: 0.5 });
     },
   });
 });
