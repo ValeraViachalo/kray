@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mm.add("(max-width: 768px)", () => {
     gsap.to(box, {
-      yPercent: 30,
+      yPercent: 20,
       scrollTrigger: {
         trigger: '.section_block.section_1',
         start: "0% 0%",
