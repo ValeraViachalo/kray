@@ -24,10 +24,6 @@ body {
   cursor: url("../img/mynaui_plus.svg") 24 24, auto;
 }
 
-.loader {
-  display: none !important;
-}
-
 .container {
   max-width: 1380px;
   width: 100%;
