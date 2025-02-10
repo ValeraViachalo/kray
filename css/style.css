@@ -15,8 +15,8 @@ span {
 }
 
 body {
-  /* background: url("../img/fullbg.jpg");
-  background-size: auto; */
+  background: url("../img/fullbg.jpg");
+  background-size: auto;
   background-color: #000;
   overflow-x: hidden;
 
@@ -761,7 +761,7 @@ body {
   height: 200vh;
   overflow: hidden;
   margin-top: 200px;
-  background: #000;
+  /* background: #000; */
   padding-top: 120px;
   padding-bottom: 120px;
 }

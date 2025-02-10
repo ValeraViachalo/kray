@@ -327,24 +327,24 @@ document.addEventListener("DOMContentLoaded", () => {
       canvas.height = canvas.clientHeight * dpr;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
-      drawGradient();
+      // drawGradient();
     }
   }
 
-  function drawGradient() {
-    const gradientTop = ctx.createLinearGradient(0, 0, 0, 40);
-    gradientTop.addColorStop(0, 'rgba(0, 0, 0, 0.8)');
-    gradientTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  // function drawGradient() {
+  //   const gradientTop = ctx.createLinearGradient(0, 0, 0, 40);
+  //   gradientTop.addColorStop(0, 'rgba(0, 0, 0, 0.8)');
+  //   gradientTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-    const gradientBottom = ctx.createLinearGradient(0, canvas.height - 40, 0, canvas.height);
-    gradientBottom.addColorStop(0, 'rgba(0, 0, 0, 0)');
-    gradientBottom.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
+  //   const gradientBottom = ctx.createLinearGradient(0, canvas.height - 40, 0, canvas.height);
+  //   gradientBottom.addColorStop(0, 'rgba(0, 0, 0, 0)');
+  //   gradientBottom.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
 
-    ctx.fillStyle = gradientTop;
-    ctx.fillRect(0, 0, canvas.width, 40);
-    ctx.fillStyle = gradientBottom;
-    ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
-  }
+  //   ctx.fillStyle = gradientTop;
+  //   ctx.fillRect(0, 0, canvas.width, 40);
+  //   ctx.fillStyle = gradientBottom;
+  //   ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+  // }
 
   function calculateOffsets() {
     if (window.innerWidth >= 1200 && window.innerWidth < 1400) {
