@@ -263,23 +263,15 @@ body {
 
 .back_image {
   position: absolute;
-  /*left: 1%;
-    bottom: 33%;*/
+  
   top: 0%;
   left: 50%;
   transform: translate(-50%, 0);
-  /* aspect-ratio:1.83;*/
   width: 100%;
   aspect-ratio: 16/9;
-  /* display: flex;
-    align-items: center;
-    justify-content: center;*/
-  /*overflow: hidden;*/
   will-change: transform;
   max-width: 1920px;
   z-index: 1;
-  /*background:url('../img/191_2.png') 0 0 no-repeat;
-	background-size:100% auto;*/
 }
 
 .back_image_inner {
@@ -287,6 +279,7 @@ body {
   height: 100%;
   position: relative;
 }
+
 
 .back_image.sprite-two {
   background: url("../img/sec.png") 0 0 no-repeat;

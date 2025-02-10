@@ -289,6 +289,8 @@ if (
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const canvas = document.getElementById("animationCanvas");
   if (!canvas) return;
 
@@ -305,8 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function preloadImages() {
     for (let i = 0; i < totalFrames; i++) {
       const img = new Image();
-      // img.src = `${spriteFolder}(${i + 1}).webp`;
-      img.src = `sprite2/(${i + 1}).webp`;
+      img.src = `${spriteFolder}(${i + 1}).webp`;
 
       img.onload = () => {
         images[i] = img;
@@ -314,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       img.onerror = () => {
-        console.error(`Failed to load image: sprite2/(${i + 1}).webp`);
+        console.error(`Failed to load image: ${spriteFolder}(${i + 1}).webp`);
       };
     }
   }
@@ -326,7 +327,23 @@ document.addEventListener("DOMContentLoaded", () => {
       canvas.height = canvas.clientHeight * dpr;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+      drawGradient();
     }
+  }
+
+  function drawGradient() {
+    const gradientTop = ctx.createLinearGradient(0, 0, 0, 40);
+    gradientTop.addColorStop(0, 'rgba(0, 0, 0, 0.8)');
+    gradientTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+    const gradientBottom = ctx.createLinearGradient(0, canvas.height - 40, 0, canvas.height);
+    gradientBottom.addColorStop(0, 'rgba(0, 0, 0, 0)');
+    gradientBottom.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
+
+    ctx.fillStyle = gradientTop;
+    ctx.fillRect(0, 0, canvas.width, 40);
+    ctx.fillStyle = gradientBottom;
+    ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
   }
 
   function calculateOffsets() {
@@ -385,14 +402,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const mm = gsap.matchMedia();
 
   mm.add("(min-width: 768px)", () => {
+    const tl = gsap.timeline()
     // Animation for screens wider than 768px
-    gsap.fromTo(box, {
-      scale: 2,
-      yPercent: 20,
+    tl.fromTo(box, {
+      scale: 1.9,
+      yPercent: 30,
       xPercent: -10,
     }, {
-      scale: 1,
-      yPercent: 0,
+      scale: 0.9,
+      yPercent: 5,
       xPercent: 0,
       scrollTrigger: {
         trigger: '.section_block.section_1',
@@ -400,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         end: "40% 0%",
         scrub: true,
       }
-    });
+    })
   });
 
   mm.add("(max-width: 768px)", () => {
@@ -432,7 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   });
-  
+
   preloadImages();
 });
 
