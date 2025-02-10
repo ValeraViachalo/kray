@@ -405,9 +405,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline()
     // Animation for screens wider than 768px
     tl.fromTo(box, {
-      scale: 1.9,
+      scale: 1.8,
       yPercent: 30,
-      xPercent: -10,
+      xPercent: -15,
     }, {
       scale: 0.9,
       yPercent: 5,
