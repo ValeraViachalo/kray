@@ -1,0 +1,41 @@
+{
+  "en": {
+    "left": {
+      "title": "Оставьте свои <span class=\"red\">контактные</span> данные",
+      "text": "И наш менеджер по работе с партнерами свяжется с вами.",
+      "button": {
+        "text": "напишите нам",
+        "link": ""
+      }
+    },
+    "right": {
+      "socials": [
+        {
+          "title": "telegram",
+          "link": "https://t.me/itmo",
+          "icon": "/images/socials/tg.svg"
+        },
+        {
+          "title": "Skype",
+          "link": "https://Skype.me/itmo",
+          "icon": "/images/socials/skype.svg"
+        },
+        {
+          "title": "Email",
+          "link": "mailto:",
+          "icon": "/images/socials/mail.svg"
+        }
+      ],
+      "policy": [
+        {
+          "title": "AFFILIATE AGREEMENT",
+          "link": "/privacy"
+        },
+        {
+          "title": "PRIVACY POLICY",
+          "link": "/terms"
+        }
+      ]
+    }
+  }
+}

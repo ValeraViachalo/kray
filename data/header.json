@@ -1,0 +1,149 @@
+{
+  "ru": {
+    "navlist": [
+      {
+        "name": "главная",
+        "link": "/"
+      },
+      {
+        "name": "продукты",
+        "link": "/faq"
+      },
+      {
+        "name": "результаты",
+        "link": "/about"
+      },
+      {
+        "name": "информация",
+        "link": "/about"
+      }
+    ],
+    "bottom": {
+      "socials": [
+        {
+          "title": "telegram",
+          "link": "https://t.me/itmo",
+          "icon": "/images/socials/tg.svg"
+        },
+        {
+          "title": "Skype",
+          "link": "https://Skype.me/itmo",
+          "icon": "/images/socials/skype.svg"
+        },
+        {
+          "title": "Email",
+          "link": "mailto:",
+          "icon": "/images/socials/mail.svg"
+        }
+      ],
+      "policy": [
+        {
+          "title": "AFFILIATE AGREEMENT",
+          "link": "/privacy"
+        },
+        {
+          "title": "PRIVACY POLICY",
+          "link": "/terms"
+        }
+      ]
+    }
+  },
+  "en": {
+    "navlist": [
+      {
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "name": "Products",
+        "link": "/faq"
+      },
+      {
+        "name": "Results",
+        "link": "/about"
+      },
+      {
+        "name": "Information",
+        "link": "/about"
+      }
+    ],
+    "bottom": {
+      "socials": [
+        {
+          "title": "telegram",
+          "link": "https://t.me/itmo",
+          "icon": "/images/socials/tg.svg"
+        },
+        {
+          "title": "Skype",
+          "link": "https://Skype.me/itmo",
+          "icon": "/images/socials/skype.svg"
+        },
+        {
+          "title": "Email",
+          "link": "mailto:",
+          "icon": "/images/socials/mail.svg"
+        }
+      ],
+      "policy": [
+        {
+          "title": "AFFILIATE AGREEMENT",
+          "link": "/privacy"
+        },
+        {
+          "title": "PRIVACY POLICY",
+          "link": "/terms"
+        }
+      ]
+    }
+  },
+  "ua": {
+    "navlist": [
+      {
+        "name": "Головна",
+        "link": "/"
+      },
+      {
+        "name": "Продукти",
+        "link": "/faq"
+      },
+      {
+        "name": "Результати",
+        "link": "/about"
+      },
+      {
+        "name": "Інформація",
+        "link": "/about"
+      }
+    ],
+    "bottom": {
+      "socials": [
+        {
+          "title": "telegram",
+          "link": "https://t.me/itmo",
+          "icon": "/images/socials/tg.svg"
+        },
+        {
+          "title": "Skype",
+          "link": "https://Skype.me/itmo",
+          "icon": "/images/socials/skype.svg"
+        },
+        {
+          "title": "Email",
+          "link": "mailto:",
+          "icon": "/images/socials/mail.svg"
+        }
+      ],
+      "policy": [
+        {
+          "title": "AFFILIATE AGREEMENT",
+          "link": "/privacy"
+        },
+        {
+          "title": "PRIVACY POLICY",
+          "link": "/terms"
+        }
+      ]
+    }
+  }
+}
